@@ -2,25 +2,12 @@ import { useState } from 'react';
 import './main.sass';
 import { v4 } from 'uuid';
 
+import { AddCategory } from './addcategory';
+
 export const main = () => {
 
-    const [ categoriasHook , setCategorias ] = useState<string[]>([]); 
-    const addcategory = () => {
-        
-
-        /*
-        const boton:any = document.getElementById('input');
-        let arr:any = categoriasHook;
-        arr.push(boton.value);
-        setCategorias(arr);
-        boton.value = "" ;
-        */
-
-        const boton:any = document.getElementById('input');
-        setCategorias([...categoriasHook,boton.value]) ; boton.value = "";
-        
-
-    }
+    const [ categoriasHook , setCategorias ] = useState<string[]|[]>([]); 
+    
 
     return(
         <>
@@ -35,8 +22,7 @@ export const main = () => {
                 })}
             </ol>
 
-            <input id='input' type="text"/>
-            <button onClick={addcategory} >Añadir</button>
+            <AddCategory sC={setCategorias} />
 
             {/*Lista de gifs*/}
                 {/*Gif cards*/}
