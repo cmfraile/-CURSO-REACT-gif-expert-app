@@ -22,7 +22,10 @@ export const main = () => {
                 })}
             </ol>
 
-            <AddCategory sC={setCategorias} />
+            <AddCategory
+                // sC={setCategorias}
+                onNewCategory={(e:string) => {setCategorias([e,...categoriasHook])}}
+            />
 
             {/*Lista de gifs*/}
                 {/*Gif cards*/}

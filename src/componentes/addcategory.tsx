@@ -1,6 +1,7 @@
 import React, { ChangeEvent, SetStateAction, useState } from "react"
 
-export const AddCategory = ({sC}:{sC:React.Dispatch<SetStateAction<string[]|[]>>}) => {
+//export const AddCategory = ({sC}:{sC?:React.Dispatch<SetStateAction<string[]|[]>>}) => {
+export const AddCategory = ({onNewCategory}:any) => {
 
     const [inputValue,setInputValue] = useState<string>('')
 
@@ -8,13 +9,14 @@ export const AddCategory = ({sC}:{sC:React.Dispatch<SetStateAction<string[]|[]>>
         <form onSubmit={(e) => {
             e.preventDefault();
             if(inputValue.trim().length <= 2){return}
-            sC((cat) => [inputValue,...cat]);
+            //sC((cat) => [inputValue,...cat]);
+            onNewCategory(inputValue.trim())
             setInputValue('');
         }}>
             <input  type="text"
                     value={inputValue}
                     placeholder="buscar gifs"
-                    onChange={(e:ChangeEvent<HTMLInputElement>) => {setInputValue(e.target.value)}}
+                    onChange={(e) => {setInputValue(e.target.value)}}
             />
         </form>
     )
