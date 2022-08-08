@@ -13,18 +13,17 @@ export const main = () => {
         <>
             {/*Titulo*/}
             <h1>Hola mundo</h1>
-
             {/*Input*/}
-
             <ol>
                 {categoriasHook.map(valor => {
                     return <li key={v4()}>{valor}</li>
                 })}
             </ol>
-
             <AddCategory
                 // sC={setCategorias}
                 onNewCategory={(e:string) => {setCategorias([e,...categoriasHook])}}
+                cHK={categoriasHook}
+
             />
 
             {/*Lista de gifs*/}
