@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './main.sass';
+import { useState } from 'react';
 import { v4 } from 'uuid';
-
 import { AddCategory } from './addcategory';
 import { GifGrid } from './gifgrid';
 
