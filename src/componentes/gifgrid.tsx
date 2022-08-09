@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
-import { getGifs , placement } from '../helpers/getgifs';
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({categoria}:{categoria:string}) => {
 
-    const [images,setImages] = useState<{id:string,title:string,url:string}[]|[]>([]);
-    useEffect(() => {getGifs(categoria).then(setImages)},[]);
-
+    const { images, isLoading } = useFetchGifs(categoria);
+    
     const iftitle = (title:string):any => {if(title){return <div className="titulo">{title}</div>}}
-
     return(
         <div className="gifgrid">
             <h3>{categoria}</h3>
@@ -23,3 +20,13 @@ export const GifGrid = ({categoria}:{categoria:string}) => {
         </div>
     )
 }
+
+/*
+export const GifGrid = ({categoria}:{categoria:string}) => {
+
+    const [images,setImages] = useState<{id:string,title:string,url:string}[]|[]>([]);
+    useEffect(() => {getGifs(categoria).then(setImages)},[]);
+
+    
+}
+*/
