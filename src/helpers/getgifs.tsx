@@ -18,7 +18,7 @@ export const getGifs = async(categoria:string):Promise<{id:string,title:string,u
         return caso.join('');
     }
     const { data } = await(await fetch(querystring())).json();
-    const gifs = data.map(({id,title,url}:any) => ({id,title,url}));
+    const gifs = data.map((img:any) => ({id:img.id,title:img.title,url:img.images.original.url}));
     return gifs;
 }
 
