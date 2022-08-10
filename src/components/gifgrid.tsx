@@ -1,4 +1,5 @@
 import { useFetchGifs } from "../hooks/useFetchGifs";
+import PropTypes from 'prop-types';
 
 export const GifGrid = ({categoria}:{categoria:string}) => {
 
@@ -22,12 +23,4 @@ export const GifGrid = ({categoria}:{categoria:string}) => {
     )
 }
 
-/*
-export const GifGrid = ({categoria}:{categoria:string}) => {
-
-    const [images,setImages] = useState<{id:string,title:string,url:string}[]|[]>([]);
-    useEffect(() => {getGifs(categoria).then(setImages)},[]);
-
-    
-}
-*/
+GifGrid.propTypes = { categoria : PropTypes.string.isRequired };

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './mainDOM.sass'
-import {main as Main} from './componentes/main';
+import {main as Main} from './components/main';
 
 //bootstrap:
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
