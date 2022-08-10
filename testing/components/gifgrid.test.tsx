@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render , screen } from '@testing-library/react';
 import { GifGrid } from '../../src/components/gifgrid';
 import React from 'react';
 
@@ -6,10 +6,15 @@ const main = () => {
 
     const valorcat:string = 'JoJo';
 
-    test('debe de mandarse por props una categoria',() => {
-        console.log(render(<GifGrid categoria={valorcat}/>))
-        //expect(render(<GifGrid categoria={valorcat}/>))
-    })
+    test('Screenshot',() => {
+        expect(render(<GifGrid categoria={valorcat}/>).container).toMatchSnapshot();
+    });
+
+    test('debe de aparecer el títutlo de categoria correctamente insertado',() => {
+        expect(render(<GifGrid categoria={valorcat}/>));
+        expect(screen.getByLabelText('title').innerHTML).toContain(valorcat);
+    });
+
 };
 
 describe('Pruebas en el <GifGrid>',main)

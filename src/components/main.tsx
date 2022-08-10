@@ -10,7 +10,7 @@ export const main = () => {
 
     return(
         <>
-            <h1>Git Expert APP</h1>
+            <h1>Gif Expert APP</h1>
             
             <AddCategory
                 // sC={setCategorias}

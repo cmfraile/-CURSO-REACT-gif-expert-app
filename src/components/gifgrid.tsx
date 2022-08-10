@@ -8,7 +8,7 @@ export const GifGrid = ({categoria}:{categoria:string}) => {
     return(
 
         <div className="gifgrid">
-            <h3>{categoria}</h3>
+            <h3 aria-label='title' >{categoria}</h3>
             <h2 style={{display:(isLoading) ? '' : 'none'}}>Cargando...</h2>
             {images.map(({id,title,url}) => (
             <div    
