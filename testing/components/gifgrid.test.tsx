@@ -10,7 +10,7 @@ const main = () => {
         expect(render(<GifGrid categoria={valorcat}/>).container).toMatchSnapshot();
     });
 
-    test('debe de aparecer el títutlo de categoria correctamente insertado',() => {
+    test('debe de aparecer el título de categoria correctamente insertado',() => {
         expect(render(<GifGrid categoria={valorcat}/>));
         expect(screen.getByLabelText('title').innerHTML).toContain(valorcat);
     });
