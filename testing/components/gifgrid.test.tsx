@@ -9,10 +9,13 @@ const main = () => {
     test('Screenshot',() => {
         expect(render(<GifGrid categoria={valorcat}/>).container).toMatchSnapshot();
     });
-
     test('debe de aparecer el título de categoria correctamente insertado',() => {
         expect(render(<GifGrid categoria={valorcat}/>));
         expect(screen.getByLabelText('title').innerHTML).toContain(valorcat);
+    });
+
+    test('debe de traer las imágenes tras cargar el customHook',() => {
+        
     });
 
 };
