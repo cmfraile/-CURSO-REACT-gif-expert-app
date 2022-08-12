@@ -8,11 +8,33 @@ exports[`Pruebas en el <GifGrid> Screenshot 1`] = `
     <h3
       aria-label="title"
     >
-      JoJo
+      Saitama
     </h3>
     <h2>
       Cargando...
     </h2>
+    <div
+      aria-label="imgcard"
+      class="ggimg fondodefault"
+      style="background-image: url(http://localhost:5173/saitama);"
+    >
+      <div
+        class="titulo"
+      >
+        Saitama
+      </div>
+    </div>
+    <div
+      aria-label="imgcard"
+      class="ggimg fondodefault"
+      style="background-image: url(http://localhost:5173/saitama);"
+    >
+      <div
+        class="titulo"
+      >
+        Saitama
+      </div>
+    </div>
   </div>
 </div>
 `;

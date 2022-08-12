@@ -11,7 +11,8 @@ export const GifGrid = ({categoria}:{categoria:string}) => {
             <h3 aria-label='title' >{categoria}</h3>
             <h2 style={{display:(isLoading) ? '' : 'none'}}>Cargando...</h2>
             {images.map(({id,title,url}) => (
-            <div    
+            <div
+                aria-label='imgcard'    
                 key={id}
                 className="ggimg fondodefault"
                 style={{backgroundImage:`url(${url})`}}
