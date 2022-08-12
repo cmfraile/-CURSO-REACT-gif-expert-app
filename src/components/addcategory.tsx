@@ -8,9 +8,11 @@ export const AddCategory = ({onNewCategory,cHK}:ACface) => {
     const [inputValue,setInputValue] = useState<string>('')
 
     return(
-        <form onSubmit={(e) => {
+        <form   aria-label='form'
+                onSubmit={(e) => {
+            //console.log('Hola mundo desde el submit');
             e.preventDefault();
-
+            
             //VALIDADORES:
             if(inputValue.trim().length <= 2){return}
             if(cHK.map(x => x.toUpperCase()).includes(inputValue.trim().toUpperCase())){return};
