@@ -1,4 +1,5 @@
-import React, { ChangeEvent, SetStateAction, useState } from "react"
+import { useState } from "react";
+import propTypes from 'prop-types';
 
 //export const AddCategory = ({sC}:{sC?:React.Dispatch<SetStateAction<string[]|[]>>}) => {
 interface ACface {onNewCategory:any,cHK:string[]|[]};
@@ -20,9 +21,14 @@ export const AddCategory = ({onNewCategory,cHK}:ACface) => {
         }}>
             <input  type="text"
                     value={inputValue}
+                    aria-label='inputcat'
                     placeholder="buscar gifs"
                     onChange={(e) => {setInputValue(e.target.value)}}
             />
         </form>
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory:propTypes.func.isRequired
 }
