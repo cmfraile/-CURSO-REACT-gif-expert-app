@@ -15,7 +15,7 @@ export const useFetchGifs = (categoria:string) => {
             },1000)
         });
         */
-       getGifs(categoria).then(setImages);
+       getGifs(categoria).then(resp => {setImages(resp) ; setIsLoading(false)});
     },[]);
     return{images,isLoading}
 
